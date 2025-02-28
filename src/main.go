@@ -85,56 +85,80 @@ func main() {
 			if crowdsecContainer == "" {
 				log.Fatal("Missing CROWDSEC_CONTAINER_NAME environment variable.")
 			}
-
-			log.Printf("API key not supplied, auto-generating via CrowdSec, using bouncer name '%s'.", BouncerName)
-
+			log.Printf("[INIT] API key not supplied, auto-generating via CrowdSec (bouncer name '%s').", BouncerName)
 			var err error
 			apiKey, err = CreateBouncerToken(crowdsecContainer)
 			if err != nil {
-				log.Fatalf("Error generating token: %v\n", err)
+				log.Fatalf("[ERROR] generating token: %v", err)
 			}
 		} else {
-			log.Fatal("CROWDSEC_API_KEY not set and AUTO_GENERATE_API_KEY is false.")
+			log.Fatal("[ERROR] CROWDSEC_API_KEY not set and AUTO_GENERATE_API_KEY is false.")
 		}
 	}
 
 	syncIntervalSec, err := strconv.Atoi(syncIntervalStr)
 	if err != nil || syncIntervalSec <= 0 {
-		log.Fatal("SYNC_INTERVAL_SEC must be a positive integer.")
+		log.Fatal("[ERROR] SYNC_INTERVAL_SEC must be a positive integer.")
 	}
 
-	log.Println("CrowdSec cs-bouncer started.")
-	log.Printf("Syncing every %d seconds from %s\n", syncIntervalSec, crowdsecURL)
+	log.Println("[INIT] CrowdSec cs-bouncer started.")
+	log.Printf("[CONFIG] Sync interval: %d seconds", syncIntervalSec)
+	log.Printf("[CONFIG] CrowdSec API: %s", crowdsecURL)
 
 	currentBannedIPs := make(map[string]bool)
 
+	ticker := time.NewTicker(time.Duration(syncIntervalSec) * time.Second)
+	defer ticker.Stop()
+
 	for {
+		log.Println("[SYNC] Retrieving CrowdSec decisions...")
 		decisions, err := getCrowdsecDecisions(crowdsecURL, apiKey)
 		if err != nil {
-			log.Printf("Error fetching decisions: %v\n", err)
+			log.Printf("[ERROR] Fetching decisions: %v", err)
 		} else {
 			newBannedIPs := make(map[string]bool)
 			for _, d := range decisions {
 				if d.Type == "ban" && d.Scope == "Ip" {
 					newBannedIPs[d.Value] = true
-					if !currentBannedIPs[d.Value] {
-						log.Printf("Banning new IP: %s\n", d.Value)
-						if err := banIP(d.Value); err != nil {
-							log.Printf("Error banning IP %s: %v\n", d.Value, err)
-						}
+				}
+			}
+
+			var (
+				banCount, unbanCount int
+			)
+
+			for ip := range newBannedIPs {
+				if !currentBannedIPs[ip] {
+					log.Printf("[BAN] Adding new IP ban: %s", ip)
+					if err := banIP(ip); err != nil {
+						log.Printf("[ERROR] Banning IP %s: %v", ip, err)
+					} else {
+						banCount++
 					}
 				}
 			}
+
 			for ip := range currentBannedIPs {
 				if !newBannedIPs[ip] {
-					log.Printf("Unbanning removed IP: %s\n", ip)
+					log.Printf("[UNBAN] Removing IP ban: %s", ip)
 					if err := unbanIP(ip); err != nil {
-						log.Printf("Error unbanning IP %s: %v\n", ip, err)
+						log.Printf("[ERROR] Unbanning IP %s: %v", ip, err)
+					} else {
+						unbanCount++
 					}
 				}
 			}
+
+			if banCount == 0 && unbanCount == 0 {
+				log.Println("[SYNC] No IP changes detected.")
+			} else {
+				log.Printf("[SYNC] Completed: %d banned, %d unbanned.", banCount, unbanCount)
+			}
+
 			currentBannedIPs = newBannedIPs
 		}
-		time.Sleep(time.Duration(syncIntervalSec) * time.Second)
+
+		log.Printf("[WAIT] Next sync in %d seconds...", syncIntervalSec)
+		<-ticker.C
 	}
 }
