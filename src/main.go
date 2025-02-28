@@ -23,6 +23,27 @@ type Decision struct {
 	Scenario  string `json:"scenario"`
 }
 
+// Get currently banned IPs from iptables at startup (restoration)
+func getCurrentlyBannedIPsFromIptables() (map[string]bool, error) {
+	ipMap := make(map[string]bool)
+
+	cmd := exec.Command("iptables", "-L", "INPUT", "-n")
+	out, err := cmd.Output()
+	if err != nil {
+		return nil, err
+	}
+
+	lines := strings.Split(string(out), "\n")
+	for _, line := range lines {
+		fields := strings.Fields(line)
+		if len(fields) >= 4 && fields[0] == "DROP" { // Checks if the rule is DROP
+			ip := fields[3]
+			ipMap[ip] = true
+		}
+	}
+	return ipMap, nil
+}
+
 // Fetch current Crowdsec decisions via REST API
 func getCrowdsecDecisions(url, apiKey string) ([]Decision, error) {
 	client := &http.Client{}
@@ -124,7 +145,13 @@ func main() {
 	log.Printf("[CONFIG] Sync interval: %d seconds", syncIntervalSec)
 	log.Printf("[CONFIG] CrowdSec API: %s", crowdsecURL)
 
-	currentBannedIPs := make(map[string]bool)
+	currentBannedIPs, err := getCurrentlyBannedIPsFromIptables()
+	if err != nil {
+		log.Printf("[ERROR] Restoring iptables banned IP list: %v", err)
+		currentBannedIPs = make(map[string]bool) // fallback if check fails
+	} else {
+		log.Printf("[INIT] Restored %d banned IPs from iptables.", len(currentBannedIPs))
+	}
 
 	ticker := time.NewTicker(time.Duration(syncIntervalSec) * time.Second)
 	defer ticker.Stop()
