@@ -5,6 +5,7 @@ WORKDIR /app
 COPY go.mod .
 COPY main.go .
 COPY token.go .
+COPY host.go .
 RUN go mod tidy
 RUN go build -o cs-bouncer .
 
