@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"io"
 	"log"
+	"net"
 	"net/http"
 	"os"
 	"os/exec"
@@ -78,12 +79,36 @@ func runIptables(args ...string) error {
 	return nil
 }
 
+// Updated banIP function clearly supporting IPv6:
 func banIP(ip string) error {
+	if isIPv6(ip) {
+		return runIP6tables("-I", "INPUT", "-s", ip, "-j", "DROP")
+	}
 	return runIptables("-I", "INPUT", "-s", ip, "-j", "DROP")
 }
 
+// Updated unbanIP function clearly supporting IPv6:
 func unbanIP(ip string) error {
+	if isIPv6(ip) {
+		return runIP6tables("-D", "INPUT", "-s", ip, "-j", "DROP")
+	}
 	return runIptables("-D", "INPUT", "-s", ip, "-j", "DROP")
+}
+
+// Checks clearly if given IP is IPv6
+func isIPv6(ip string) bool {
+	return net.ParseIP(ip).To4() == nil
+}
+
+// Runs IPv6-specific iptables command clearly
+func runIP6tables(args ...string) error {
+	cmd := exec.Command("ip6tables", args...)
+	output, err := cmd.CombinedOutput()
+	if err != nil {
+		log.Printf("ip6tables Error: %s, Output: %s\n", err, string(output))
+		return err
+	}
+	return nil
 }
 
 func logError(s string) error {

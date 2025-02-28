@@ -11,7 +11,7 @@ RUN go build -o cs-bouncer .
 
 # === Stage 2: Runtime ===
 FROM alpine:latest
-RUN apk add --no-cache iptables docker-cli
+RUN apk add --no-cache iptables ip6tables docker-cli
 WORKDIR /app
 COPY --from=builder /app/cs-bouncer .
 
