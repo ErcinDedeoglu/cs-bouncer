@@ -8,6 +8,7 @@ import (
 	"os"
 	"os/exec"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -69,6 +70,24 @@ func logError(s string) error {
 	return nil
 }
 
+func countIptablesBannedIPs() (int, error) {
+	cmd := exec.Command("iptables", "-L", "INPUT", "-n")
+	output, err := cmd.Output()
+	if err != nil {
+		return 0, err
+	}
+
+	count := 0
+	lines := strings.Split(string(output), "\n")
+	for _, line := range lines {
+		if strings.Contains(line, "DROP") {
+			count++
+		}
+	}
+
+	return count, nil
+}
+
 func main() {
 	apiKey := os.Getenv("CROWDSEC_API_KEY")
 	crowdsecURL := os.Getenv("CROWDSEC_URL")
@@ -116,12 +135,22 @@ func main() {
 		if err != nil {
 			log.Printf("[ERROR] Fetching decisions: %v", err)
 		} else {
+			// total IPs reported by CrowdSec
+			crowdsecIPCount := 0
 			newBannedIPs := make(map[string]bool)
 			for _, d := range decisions {
 				if d.Type == "ban" && d.Scope == "Ip" {
 					newBannedIPs[d.Value] = true
+					crowdsecIPCount++
 				}
 			}
+
+			iptablesIPCount, err := countIptablesBannedIPs()
+			if err != nil {
+				log.Printf("[ERROR] Counting iptables rules: %v", err)
+			}
+
+			log.Printf("[STATS] CrowdSec banned IPs: %d | iptables banned IPs: %d", crowdsecIPCount, iptablesIPCount)
 
 			var (
 				banCount, unbanCount int
