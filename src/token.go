@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os/exec"
+	"strings"
 )
 
 const BouncerName = "cs-bouncer"
@@ -27,19 +28,22 @@ func CreateBouncerToken(crowdsecContainer string) (string, error) {
 		log.Printf("Old bouncer '%s' deleted.\n", BouncerName)
 	}
 
-	// Create new bouncer
 	cmd := exec.Command("docker", "exec", crowdsecContainer, "cscli", "bouncers", "add", BouncerName, "-o", "json")
-	out, err := cmd.Output()
+	out, err := cmd.CombinedOutput() // Using CombinedOutput to capture stderr too
 	if err != nil {
-		return "", fmt.Errorf("docker exec error: %w, output: %s", err, string(out))
+		return "", fmt.Errorf("docker exec failed: %w | OUTPUT: %s", err, strings.TrimSpace(string(out)))
 	}
 
 	var resp BouncerResponse
 	if err := json.Unmarshal(out, &resp); err != nil {
-		return "", fmt.Errorf("unmarshal error: %w", err)
+		return "", fmt.Errorf("JSON unmarshal failed: %w | RAW OUTPUT: %s", err, strings.TrimSpace(string(out)))
 	}
 
-	log.Printf("Created new bouncer '%s'.\n", BouncerName)
+	if resp.ApiKey == "" {
+		return "", fmt.Errorf("empty API key received. RAW OUTPUT: %s", strings.TrimSpace(string(out)))
+	}
+
+	log.Printf("created new bouncer '%s' with api key.\n", BouncerName)
 	return resp.ApiKey, nil
 }
 
@@ -48,7 +52,7 @@ func CheckBouncerExists(bouncerName, crowdsecContainer string) (bool, error) {
 	cmd := exec.Command("docker", "exec", crowdsecContainer, "cscli", "bouncers", "inspect", bouncerName)
 	err := cmd.Run()
 	if err != nil {
-		return false, nil // doesn't exist
+		return false, nil // implies not exists
 	}
 	return true, nil
 }
@@ -58,7 +62,7 @@ func DeleteBouncer(bouncerName, crowdsecContainer string) error {
 	cmd := exec.Command("docker", "exec", crowdsecContainer, "cscli", "bouncers", "delete", bouncerName)
 	out, err := cmd.CombinedOutput()
 	if err != nil {
-		return fmt.Errorf("error deleting bouncer: %w, output: %s", err, string(out))
+		return fmt.Errorf("error deleting bouncer: %w, output: %s", err, strings.TrimSpace(string(out)))
 	}
 	return nil
 }
