@@ -1,6 +1,6 @@
 FROM golang:1.21-alpine3.18
 
-RUN apk add --no-cache iptables
+RUN apk add --no-cache iptables docker-cli
 
 WORKDIR /app
 
@@ -10,5 +10,4 @@ COPY token.go .
 
 RUN go build -o cs-bouncer main.go
 
-# Container will run as root to apply firewall rules
 ENTRYPOINT ["/app/cs-bouncer"]

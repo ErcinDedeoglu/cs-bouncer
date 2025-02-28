@@ -74,7 +74,6 @@ func main() {
 	crowdsecURL := os.Getenv("CROWDSEC_URL")
 	syncIntervalStr := os.Getenv("SYNC_INTERVAL_SEC")
 	autoGenerateKey := os.Getenv("AUTO_GENERATE_API_KEY")
-	bouncerName := os.Getenv("CROWDSEC_BOUNCER_NAME")
 	crowdsecContainer := os.Getenv("CROWDSEC_CONTAINER_NAME")
 
 	if crowdsecURL == "" || syncIntervalStr == "" {
@@ -83,17 +82,19 @@ func main() {
 
 	if apiKey == "" {
 		if autoGenerateKey == "true" {
-			if bouncerName == "" || crowdsecContainer == "" {
-				log.Fatal("AUTO_GENERATE_API_KEY is true, but missing CROWDSEC_BOUNCER_NAME or CROWDSEC_CONTAINER_NAME.")
+			if crowdsecContainer == "" {
+				log.Fatal("Missing CROWDSEC_CONTAINER_NAME environment variable.")
 			}
-			log.Println("API key not supplied, auto-generating via CrowdSec.")
+
+			log.Printf("API key not supplied, auto-generating via CrowdSec, using bouncer name '%s'.", BouncerName)
+
 			var err error
-			apiKey, err = CreateBouncerToken(bouncerName, crowdsecContainer)
+			apiKey, err = CreateBouncerToken(crowdsecContainer)
 			if err != nil {
-				log.Fatalf("Error auto-generating token: %v\n", err)
+				log.Fatalf("Error generating token: %v\n", err)
 			}
 		} else {
-			log.Fatal("CROWDSEC_API_KEY not set and AUTO_GENERATE_API_KEY is false. Set one to continue.")
+			log.Fatal("CROWDSEC_API_KEY not set and AUTO_GENERATE_API_KEY is false.")
 		}
 	}
 
