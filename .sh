@@ -1,5 +1,5 @@
 repomix --no-file-summary --no-security-check \
-  --include "src/**,docker-compose.yml" \
+  --include "src/**" \
   --output "repopack.yml"
 
 
