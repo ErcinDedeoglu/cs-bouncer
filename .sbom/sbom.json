@@ -3177,7 +3177,7 @@
       }
     },
     {
-      "id": "6ce76035f6c1b39b",
+      "id": "8333f50be21295a9",
       "name": "cs-bouncer",
       "version": "(devel)",
       "type": "go-module",
@@ -3185,7 +3185,7 @@
       "locations": [
         {
           "path": "/app/cs-bouncer",
-          "layerID": "sha256:7c8b7eea2a8eb4f0b47491fb18c5be0b2d34bf148fd2c5619e81f11c9f25bc70",
+          "layerID": "sha256:14eee08779a40b7f32b47689fb82dc6f5549b6d1061efc94dc9b1bbb6aa2aff2",
           "accessPath": "/app/cs-bouncer",
           "annotations": {
             "evidence": "primary"
@@ -3228,7 +3228,7 @@
             "value": "v1"
           }
         ],
-        "goCompiledVersion": "go1.24.2",
+        "goCompiledVersion": "go1.24.3",
         "architecture": "amd64",
         "mainModule": "cs-bouncer",
         "goCryptoSettings": [
@@ -6243,15 +6243,15 @@
       }
     },
     {
-      "id": "60565542df882dfd",
+      "id": "93f941c0dce0e4cc",
       "name": "stdlib",
-      "version": "go1.24.2",
+      "version": "go1.24.3",
       "type": "go-module",
       "foundBy": "go-module-binary-cataloger",
       "locations": [
         {
           "path": "/app/cs-bouncer",
-          "layerID": "sha256:7c8b7eea2a8eb4f0b47491fb18c5be0b2d34bf148fd2c5619e81f11c9f25bc70",
+          "layerID": "sha256:14eee08779a40b7f32b47689fb82dc6f5549b6d1061efc94dc9b1bbb6aa2aff2",
           "accessPath": "/app/cs-bouncer",
           "annotations": {
             "evidence": "primary"
@@ -6270,14 +6270,14 @@
       "language": "go",
       "cpes": [
         {
-          "cpe": "cpe:2.3:a:golang:go:1.24.2:-:*:*:*:*:*:*",
+          "cpe": "cpe:2.3:a:golang:go:1.24.3:-:*:*:*:*:*:*",
           "source": "syft-generated"
         }
       ],
-      "purl": "pkg:golang/stdlib@1.24.2",
+      "purl": "pkg:golang/stdlib@1.24.3",
       "metadataType": "go-module-buildinfo-entry",
       "metadata": {
-        "goCompiledVersion": "go1.24.2",
+        "goCompiledVersion": "go1.24.3",
         "architecture": ""
       }
     },
@@ -8154,19 +8154,6 @@
       "type": "contains"
     },
     {
-      "parent": "60565542df882dfd",
-      "child": "69b982bf94ccb2f0",
-      "type": "evident-by",
-      "metadata": {
-        "kind": "primary"
-      }
-    },
-    {
-      "parent": "60565542df882dfd",
-      "child": "6ce76035f6c1b39b",
-      "type": "dependency-of"
-    },
-    {
       "parent": "641201b6e05dde0f",
       "child": "2917b8992a767cbc",
       "type": "evident-by",
@@ -8269,8 +8256,8 @@
       "type": "contains"
     },
     {
-      "parent": "6ce76035f6c1b39b",
-      "child": "69b982bf94ccb2f0",
+      "parent": "8333f50be21295a9",
+      "child": "be33728bcd7ec56f",
       "type": "evident-by",
       "metadata": {
         "kind": "primary"
@@ -8389,6 +8376,19 @@
       "type": "contains"
     },
     {
+      "parent": "93f941c0dce0e4cc",
+      "child": "8333f50be21295a9",
+      "type": "dependency-of"
+    },
+    {
+      "parent": "93f941c0dce0e4cc",
+      "child": "be33728bcd7ec56f",
+      "type": "evident-by",
+      "metadata": {
+        "kind": "primary"
+      }
+    },
+    {
       "parent": "b3a8a45739261bf3",
       "child": "092c40e6cc96edd7",
       "type": "dependency-of"
@@ -8499,6 +8499,131 @@
       "type": "contains"
     },
     {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "092c40e6cc96edd7",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "1b755d45cb2df26e",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "3f63eb64a79c1189",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "441795282c281559",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "4cdf6e36df19cc09",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "5732e2d080a0a28c",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "57ffd220d79cb117",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "5dd53a4dcb46e28e",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "5e649c7c3eb5dfed",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "5fd65cff212b51aa",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "641201b6e05dde0f",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "6cadff4303b9c142",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "8333f50be21295a9",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "84efb3a8cf5f4e8d",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "86cf615978380604",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "93f941c0dce0e4cc",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "b3a8a45739261bf3",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "bdb7f2c637679326",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "c1faa35efa11da10",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "cd1596a99504840a",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "d8b802483dfb52ac",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "e0326841c471a81b",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "e7e33c53ce50b0a3",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "f1ba11befe8b53ff",
+      "type": "contains"
+    },
+    {
+      "parent": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
+      "child": "fada79750158040f",
+      "type": "contains"
+    },
+    {
       "parent": "cd1596a99504840a",
       "child": "2917b8992a767cbc",
       "type": "evident-by",
@@ -8522,131 +8647,6 @@
     {
       "parent": "cd1596a99504840a",
       "child": "c326dc77797360a0",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "092c40e6cc96edd7",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "1b755d45cb2df26e",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "3f63eb64a79c1189",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "441795282c281559",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "4cdf6e36df19cc09",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "5732e2d080a0a28c",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "57ffd220d79cb117",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "5dd53a4dcb46e28e",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "5e649c7c3eb5dfed",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "5fd65cff212b51aa",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "60565542df882dfd",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "641201b6e05dde0f",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "6cadff4303b9c142",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "6ce76035f6c1b39b",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "84efb3a8cf5f4e8d",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "86cf615978380604",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "b3a8a45739261bf3",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "bdb7f2c637679326",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "c1faa35efa11da10",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "cd1596a99504840a",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "d8b802483dfb52ac",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "e0326841c471a81b",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "e7e33c53ce50b0a3",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "f1ba11befe8b53ff",
-      "type": "contains"
-    },
-    {
-      "parent": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
-      "child": "fada79750158040f",
       "type": "contains"
     },
     {
@@ -8838,10 +8838,10 @@
   ],
   "files": [
     {
-      "id": "69b982bf94ccb2f0",
+      "id": "be33728bcd7ec56f",
       "location": {
         "path": "/app/cs-bouncer",
-        "layerID": "sha256:7c8b7eea2a8eb4f0b47491fb18c5be0b2d34bf148fd2c5619e81f11c9f25bc70"
+        "layerID": "sha256:14eee08779a40b7f32b47689fb82dc6f5549b6d1061efc94dc9b1bbb6aa2aff2"
       },
       "metadata": {
         "mode": 755,
@@ -8849,16 +8849,16 @@
         "userID": 0,
         "groupID": 0,
         "mimeType": "application/x-executable",
-        "size": 8827773
+        "size": 8826836
       },
       "digests": [
         {
           "algorithm": "sha1",
-          "value": "3b01e7034461bcf70383d0b5d642471121b9c5ed"
+          "value": "3abc9fe9276ddc48304efdd0a77e4446f5ffd197"
         },
         {
           "algorithm": "sha256",
-          "value": "942e88ce4af0e9b01ca61438b5f17049ec78b6a70d9c3a407d21fb1a13b604f4"
+          "value": "44b26258684b4e38ed084508cbee90fb48d3e380ea394520794e7d31d85ea958"
         }
       ],
       "executable": {
@@ -20400,19 +20400,19 @@
     }
   ],
   "source": {
-    "id": "d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
+    "id": "cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
     "name": "ghcr.io/ercindedeoglu/cs-bouncer",
-    "version": "43795d1",
+    "version": "bff7e34",
     "type": "image",
     "metadata": {
-      "userInput": "ghcr.io/ercindedeoglu/cs-bouncer:43795d1",
-      "imageID": "sha256:9e3ccf5aa4f2d40ea069b76e96aa3db0206523b0a4c8fabe1e494ce31e725fd1",
-      "manifestDigest": "sha256:d3817b27c03d52bf3fb41fd4eb63a313033b18ff8d2f0d56d6d22fa2fa430179",
+      "userInput": "ghcr.io/ercindedeoglu/cs-bouncer:bff7e34",
+      "imageID": "sha256:f22ecacc5d763aaebe20fac70a246957a031ec33b4b396651065dbf48dcd4051",
+      "manifestDigest": "sha256:cb0869ea9b42a0aa7ff879eedea00fd9c1f0750595c734ad400345c6f2cc3fb3",
       "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
       "tags": [
-        "ghcr.io/ercindedeoglu/cs-bouncer:43795d1"
+        "ghcr.io/ercindedeoglu/cs-bouncer:bff7e34"
       ],
-      "imageSize": 49187246,
+      "imageSize": 49186309,
       "layers": [
         {
           "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
@@ -20431,21 +20431,21 @@
         },
         {
           "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
-          "digest": "sha256:7c8b7eea2a8eb4f0b47491fb18c5be0b2d34bf148fd2c5619e81f11c9f25bc70",
-          "size": 8827773
+          "digest": "sha256:14eee08779a40b7f32b47689fb82dc6f5549b6d1061efc94dc9b1bbb6aa2aff2",
+          "size": 8826836
         }
       ],
-      "manifest": "eyJzY2hlbWFWZXJzaW9uIjoyLCJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmRpc3RyaWJ1dGlvbi5tYW5pZmVzdC52Mitqc29uIiwiY29uZmlnIjp7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuY29udGFpbmVyLmltYWdlLnYxK2pzb24iLCJzaXplIjoxNTY2LCJkaWdlc3QiOiJzaGEyNTY6OWUzY2NmNWFhNGYyZDQwZWEwNjliNzZlOTZhYTNkYjAyMDY1MjNiMGE0YzhmYWJlMWU0OTRjZTMxZTcyNWZkMSJ9LCJsYXllcnMiOlt7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLCJzaXplIjo4MTIwODMyLCJkaWdlc3QiOiJzaGEyNTY6MDgwMDBjMThkMTZkYWRmOTU1M2Q3NDdhNThjZjQ0MDIzNDIzYTlhYjAxMGFhYjk2Y2YyNjNkMjIxNmI4YjM1MCJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjMyOTIwMDY0LCJkaWdlc3QiOiJzaGEyNTY6YzZhNWQyOTY0ODA4ZWFmZTlkODBkM2Y1MTVhZTVkNWJlNGEzNjUyYjljN2IyZmYzMzRhNGM0YTg1OTFlYjEzYSJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjE1MzYsImRpZ2VzdCI6InNoYTI1NjpjODJjMWUwYTYwOTU4YTNjYWMwMmIxNDlkNzg0M2NkYTBmMWZiZjM1YjU0YzhjMDI0OWY0YTdlMmUwNWFhMTMxIn0seyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwic2l6ZSI6ODgyOTk1MiwiZGlnZXN0Ijoic2hhMjU2OjdjOGI3ZWVhMmE4ZWI0ZjBiNDc0OTFmYjE4YzViZTBiMmQzNGJmMTQ4ZmQyYzU2MTllODFmMTFjOWYyNWJjNzAifV19",
-      "config": "eyJhcmNoaXRlY3R1cmUiOiJhbWQ2NCIsImNvbmZpZyI6eyJFbnYiOlsiUEFUSD0vdXNyL2xvY2FsL3NiaW46L3Vzci9sb2NhbC9iaW46L3Vzci9zYmluOi91c3IvYmluOi9zYmluOi9iaW4iXSwiRW50cnlwb2ludCI6WyIvYXBwL2NzLWJvdW5jZXIiXSwiV29ya2luZ0RpciI6Ii9hcHAiLCJMYWJlbHMiOnsib3JnLm9wZW5jb250YWluZXJzLmltYWdlLnNvdXJjZSI6Imh0dHBzOi8vZ2l0aHViLmNvbS9FcmNpbkRlZGVvZ2x1L2NzLWJvdW5jZXIiLCJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UudGl0bGUiOiJjcy1ib3VuY2VyIiwib3JnLm9wZW5jb250YWluZXJzLmltYWdlLnZlcnNpb24iOiJ2MS4wLjkifX0sImNyZWF0ZWQiOiIyMDI1LTA0LTAyVDAwOjIwOjMzLjcwODU0MjEwOVoiLCJoaXN0b3J5IjpbeyJjcmVhdGVkIjoiMjAyNS0wMi0xNFQwMzoyODozNloiLCJjcmVhdGVkX2J5IjoiQUREIGFscGluZS1taW5pcm9vdGZzLTMuMjEuMy14ODZfNjQudGFyLmd6IC8gIyBidWlsZGtpdCIsImNvbW1lbnQiOiJidWlsZGtpdC5kb2NrZXJmaWxlLnYwIn0seyJjcmVhdGVkIjoiMjAyNS0wMi0xNFQwMzoyODozNloiLCJjcmVhdGVkX2J5IjoiQ01EIFtcIi9iaW4vc2hcIl0iLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCIsImVtcHR5X2xheWVyIjp0cnVlfSx7ImNyZWF0ZWQiOiIyMDI1LTAyLTI4VDExOjI3OjE0Ljg3MTk1MzQ4OFoiLCJjcmVhdGVkX2J5IjoiUlVOIC9iaW4vc2ggLWMgYXBrIGFkZCAtLW5vLWNhY2hlIGlwdGFibGVzIGlwNnRhYmxlcyBkb2NrZXItY2xpICMgYnVpbGRraXQiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCJ9LHsiY3JlYXRlZCI6IjIwMjUtMDItMjhUMTE6Mjc6MTQuODk0Nzc5MDMyWiIsImNyZWF0ZWRfYnkiOiJXT1JLRElSIC9hcHAiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCJ9LHsiY3JlYXRlZCI6IjIwMjUtMDQtMDJUMDA6MjA6MzMuNzA4NTQyMTA5WiIsImNyZWF0ZWRfYnkiOiJDT1BZIC9hcHAvY3MtYm91bmNlciAuICMgYnVpbGRraXQiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCJ9LHsiY3JlYXRlZCI6IjIwMjUtMDQtMDJUMDA6MjA6MzMuNzA4NTQyMTA5WiIsImNyZWF0ZWRfYnkiOiJFTlRSWVBPSU5UIFtcIi9hcHAvY3MtYm91bmNlclwiXSIsImNvbW1lbnQiOiJidWlsZGtpdC5kb2NrZXJmaWxlLnYwIiwiZW1wdHlfbGF5ZXIiOnRydWV9XSwib3MiOiJsaW51eCIsInJvb3RmcyI6eyJ0eXBlIjoibGF5ZXJzIiwiZGlmZl9pZHMiOlsic2hhMjU2OjA4MDAwYzE4ZDE2ZGFkZjk1NTNkNzQ3YTU4Y2Y0NDAyMzQyM2E5YWIwMTBhYWI5NmNmMjYzZDIyMTZiOGIzNTAiLCJzaGEyNTY6YzZhNWQyOTY0ODA4ZWFmZTlkODBkM2Y1MTVhZTVkNWJlNGEzNjUyYjljN2IyZmYzMzRhNGM0YTg1OTFlYjEzYSIsInNoYTI1NjpjODJjMWUwYTYwOTU4YTNjYWMwMmIxNDlkNzg0M2NkYTBmMWZiZjM1YjU0YzhjMDI0OWY0YTdlMmUwNWFhMTMxIiwic2hhMjU2OjdjOGI3ZWVhMmE4ZWI0ZjBiNDc0OTFmYjE4YzViZTBiMmQzNGJmMTQ4ZmQyYzU2MTllODFmMTFjOWYyNWJjNzAiXX19",
+      "manifest": "eyJzY2hlbWFWZXJzaW9uIjoyLCJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmRpc3RyaWJ1dGlvbi5tYW5pZmVzdC52Mitqc29uIiwiY29uZmlnIjp7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuY29udGFpbmVyLmltYWdlLnYxK2pzb24iLCJzaXplIjoxNTY3LCJkaWdlc3QiOiJzaGEyNTY6ZjIyZWNhY2M1ZDc2M2FhZWJlMjBmYWM3MGEyNDY5NTdhMDMxZWMzM2I0YjM5NjY1MTA2NWRiZjQ4ZGNkNDA1MSJ9LCJsYXllcnMiOlt7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLCJzaXplIjo4MTIwODMyLCJkaWdlc3QiOiJzaGEyNTY6MDgwMDBjMThkMTZkYWRmOTU1M2Q3NDdhNThjZjQ0MDIzNDIzYTlhYjAxMGFhYjk2Y2YyNjNkMjIxNmI4YjM1MCJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjMyOTIwMDY0LCJkaWdlc3QiOiJzaGEyNTY6YzZhNWQyOTY0ODA4ZWFmZTlkODBkM2Y1MTVhZTVkNWJlNGEzNjUyYjljN2IyZmYzMzRhNGM0YTg1OTFlYjEzYSJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjE1MzYsImRpZ2VzdCI6InNoYTI1NjpjODJjMWUwYTYwOTU4YTNjYWMwMmIxNDlkNzg0M2NkYTBmMWZiZjM1YjU0YzhjMDI0OWY0YTdlMmUwNWFhMTMxIn0seyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwic2l6ZSI6ODgyODkyOCwiZGlnZXN0Ijoic2hhMjU2OjE0ZWVlMDg3NzlhNDBiN2YzMmI0NzY4OWZiODJkYzZmNTU0OWI2ZDEwNjFlZmM5NGRjOWIxYmJiNmFhMmFmZjIifV19",
+      "config": "eyJhcmNoaXRlY3R1cmUiOiJhbWQ2NCIsImNvbmZpZyI6eyJFbnYiOlsiUEFUSD0vdXNyL2xvY2FsL3NiaW46L3Vzci9sb2NhbC9iaW46L3Vzci9zYmluOi91c3IvYmluOi9zYmluOi9iaW4iXSwiRW50cnlwb2ludCI6WyIvYXBwL2NzLWJvdW5jZXIiXSwiV29ya2luZ0RpciI6Ii9hcHAiLCJMYWJlbHMiOnsib3JnLm9wZW5jb250YWluZXJzLmltYWdlLnNvdXJjZSI6Imh0dHBzOi8vZ2l0aHViLmNvbS9FcmNpbkRlZGVvZ2x1L2NzLWJvdW5jZXIiLCJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UudGl0bGUiOiJjcy1ib3VuY2VyIiwib3JnLm9wZW5jb250YWluZXJzLmltYWdlLnZlcnNpb24iOiJ2MS4wLjEwIn19LCJjcmVhdGVkIjoiMjAyNS0wNS0wN1QwMDoyMToyMC45NDg0NDgxMzJaIiwiaGlzdG9yeSI6W3siY3JlYXRlZCI6IjIwMjUtMDItMTRUMDM6Mjg6MzZaIiwiY3JlYXRlZF9ieSI6IkFERCBhbHBpbmUtbWluaXJvb3Rmcy0zLjIxLjMteDg2XzY0LnRhci5neiAvICMgYnVpbGRraXQiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCJ9LHsiY3JlYXRlZCI6IjIwMjUtMDItMTRUMDM6Mjg6MzZaIiwiY3JlYXRlZF9ieSI6IkNNRCBbXCIvYmluL3NoXCJdIiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAiLCJlbXB0eV9sYXllciI6dHJ1ZX0seyJjcmVhdGVkIjoiMjAyNS0wMi0yOFQxMToyNzoxNC44NzE5NTM0ODhaIiwiY3JlYXRlZF9ieSI6IlJVTiAvYmluL3NoIC1jIGFwayBhZGQgLS1uby1jYWNoZSBpcHRhYmxlcyBpcDZ0YWJsZXMgZG9ja2VyLWNsaSAjIGJ1aWxka2l0IiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAifSx7ImNyZWF0ZWQiOiIyMDI1LTAyLTI4VDExOjI3OjE0Ljg5NDc3OTAzMloiLCJjcmVhdGVkX2J5IjoiV09SS0RJUiAvYXBwIiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAifSx7ImNyZWF0ZWQiOiIyMDI1LTA1LTA3VDAwOjIxOjIwLjk0ODQ0ODEzMloiLCJjcmVhdGVkX2J5IjoiQ09QWSAvYXBwL2NzLWJvdW5jZXIgLiAjIGJ1aWxka2l0IiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAifSx7ImNyZWF0ZWQiOiIyMDI1LTA1LTA3VDAwOjIxOjIwLjk0ODQ0ODEzMloiLCJjcmVhdGVkX2J5IjoiRU5UUllQT0lOVCBbXCIvYXBwL2NzLWJvdW5jZXJcIl0iLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCIsImVtcHR5X2xheWVyIjp0cnVlfV0sIm9zIjoibGludXgiLCJyb290ZnMiOnsidHlwZSI6ImxheWVycyIsImRpZmZfaWRzIjpbInNoYTI1NjowODAwMGMxOGQxNmRhZGY5NTUzZDc0N2E1OGNmNDQwMjM0MjNhOWFiMDEwYWFiOTZjZjI2M2QyMjE2YjhiMzUwIiwic2hhMjU2OmM2YTVkMjk2NDgwOGVhZmU5ZDgwZDNmNTE1YWU1ZDViZTRhMzY1MmI5YzdiMmZmMzM0YTRjNGE4NTkxZWIxM2EiLCJzaGEyNTY6YzgyYzFlMGE2MDk1OGEzY2FjMDJiMTQ5ZDc4NDNjZGEwZjFmYmYzNWI1NGM4YzAyNDlmNGE3ZTJlMDVhYTEzMSIsInNoYTI1NjoxNGVlZTA4Nzc5YTQwYjdmMzJiNDc2ODlmYjgyZGM2ZjU1NDliNmQxMDYxZWZjOTRkYzliMWJiYjZhYTJhZmYyIl19fQ==",
       "repoDigests": [
-        "ghcr.io/ercindedeoglu/cs-bouncer@sha256:97ccbe3de576931911e185d2204f56f8e687694bb61ddcad9d4e441fdebba18a"
+        "ghcr.io/ercindedeoglu/cs-bouncer@sha256:657c8bef1773d374859b7503c18f1203f76218504d28edec4fc6d96900b6c180"
       ],
       "architecture": "amd64",
       "os": "linux",
       "labels": {
         "org.opencontainers.image.source": "https://github.com/ErcinDedeoglu/cs-bouncer",
         "org.opencontainers.image.title": "cs-bouncer",
-        "org.opencontainers.image.version": "v1.0.9"
+        "org.opencontainers.image.version": "v1.0.10"
       }
     }
   },
