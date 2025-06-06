@@ -3154,7 +3154,7 @@
       }
     },
     {
-      "id": "8333f50be21295a9",
+      "id": "dac9d1678e3979db",
       "name": "cs-bouncer",
       "version": "(devel)",
       "type": "go-module",
@@ -3162,7 +3162,7 @@
       "locations": [
         {
           "path": "/app/cs-bouncer",
-          "layerID": "sha256:b2f680ccf02d44cd5402d33a390dba841e3f1c36640ba7785c033a1a6988ecbd",
+          "layerID": "sha256:693f064719456707e4e75dc5e86d46c1c5ddb0d59e57576f1532efb45712c117",
           "accessPath": "/app/cs-bouncer",
           "annotations": {
             "evidence": "primary"
@@ -3205,7 +3205,7 @@
             "value": "v1"
           }
         ],
-        "goCompiledVersion": "go1.24.3",
+        "goCompiledVersion": "go1.24.4",
         "architecture": "amd64",
         "mainModule": "cs-bouncer",
         "goCryptoSettings": [
@@ -6296,45 +6296,6 @@
       }
     },
     {
-      "id": "93f941c0dce0e4cc",
-      "name": "stdlib",
-      "version": "go1.24.3",
-      "type": "go-module",
-      "foundBy": "go-module-binary-cataloger",
-      "locations": [
-        {
-          "path": "/app/cs-bouncer",
-          "layerID": "sha256:b2f680ccf02d44cd5402d33a390dba841e3f1c36640ba7785c033a1a6988ecbd",
-          "accessPath": "/app/cs-bouncer",
-          "annotations": {
-            "evidence": "primary"
-          }
-        }
-      ],
-      "licenses": [
-        {
-          "value": "BSD-3-Clause",
-          "spdxExpression": "BSD-3-Clause",
-          "type": "declared",
-          "urls": [],
-          "locations": []
-        }
-      ],
-      "language": "go",
-      "cpes": [
-        {
-          "cpe": "cpe:2.3:a:golang:go:1.24.3:-:*:*:*:*:*:*",
-          "source": "syft-generated"
-        }
-      ],
-      "purl": "pkg:golang/stdlib@1.24.3",
-      "metadataType": "go-module-buildinfo-entry",
-      "metadata": {
-        "goCompiledVersion": "go1.24.3",
-        "architecture": ""
-      }
-    },
-    {
       "id": "ee66ae2759f53a0a",
       "name": "stdlib",
       "version": "go1.24.3",
@@ -6370,6 +6331,45 @@
       "metadataType": "go-module-buildinfo-entry",
       "metadata": {
         "goCompiledVersion": "go1.24.3",
+        "architecture": ""
+      }
+    },
+    {
+      "id": "149beb1c8bd29737",
+      "name": "stdlib",
+      "version": "go1.24.4",
+      "type": "go-module",
+      "foundBy": "go-module-binary-cataloger",
+      "locations": [
+        {
+          "path": "/app/cs-bouncer",
+          "layerID": "sha256:693f064719456707e4e75dc5e86d46c1c5ddb0d59e57576f1532efb45712c117",
+          "accessPath": "/app/cs-bouncer",
+          "annotations": {
+            "evidence": "primary"
+          }
+        }
+      ],
+      "licenses": [
+        {
+          "value": "BSD-3-Clause",
+          "spdxExpression": "BSD-3-Clause",
+          "type": "declared",
+          "urls": [],
+          "locations": []
+        }
+      ],
+      "language": "go",
+      "cpes": [
+        {
+          "cpe": "cpe:2.3:a:golang:go:1.24.4:-:*:*:*:*:*:*",
+          "source": "syft-generated"
+        }
+      ],
+      "purl": "pkg:golang/stdlib@1.24.4",
+      "metadataType": "go-module-buildinfo-entry",
+      "metadata": {
+        "goCompiledVersion": "go1.24.4",
         "architecture": ""
       }
     },
@@ -6535,6 +6535,19 @@
           "/usr/bin/docker"
         ]
       }
+    },
+    {
+      "parent": "149beb1c8bd29737",
+      "child": "8289fa6e7f5a9377",
+      "type": "evident-by",
+      "metadata": {
+        "kind": "primary"
+      }
+    },
+    {
+      "parent": "149beb1c8bd29737",
+      "child": "dac9d1678e3979db",
+      "type": "dependency-of"
     },
     {
       "parent": "15dfcbb814f3f911",
@@ -8044,6 +8057,136 @@
       "type": "contains"
     },
     {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "01aa01a57427541c",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "1299e8af6280a783",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "149beb1c8bd29737",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "15dfcbb814f3f911",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "2102fe000c44b559",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "22d7eab5fc975368",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "450edff24758b56e",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "5bbd33fc8d83b1f9",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "5e1d59a7366bb284",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "753903c9d890b73b",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "76145d2aa8fc6935",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "8661f95150c1e2b6",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "881b00d33dee6363",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "8a794da1c89bf371",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "91cc93442a7f5542",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "947b47aee5a2834d",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "aae57179ea2ecbdb",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "ac290b0ea5712c7f",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "b3dc9ac7252dcfc0",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "b922e2d1fc435019",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "d1ee23833e5fddca",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "d589392682c3c15f",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "dac9d1678e3979db",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "df47a2b29e419453",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "ee66ae2759f53a0a",
+      "type": "contains"
+    },
+    {
+      "parent": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
+      "child": "f9d711457bcf3e1a",
+      "type": "contains"
+    },
+    {
       "parent": "753903c9d890b73b",
       "child": "01aa01a57427541c",
       "type": "dependency-of"
@@ -8159,14 +8302,6 @@
       "parent": "76145d2aa8fc6935",
       "child": "fed12f0ad9be9208",
       "type": "contains"
-    },
-    {
-      "parent": "8333f50be21295a9",
-      "child": "f0335edcb1f90c61",
-      "type": "evident-by",
-      "metadata": {
-        "kind": "primary"
-      }
     },
     {
       "parent": "8661f95150c1e2b6",
@@ -8372,19 +8507,6 @@
     {
       "parent": "91cc93442a7f5542",
       "child": "b5ef4929e33571d9",
-      "type": "evident-by",
-      "metadata": {
-        "kind": "primary"
-      }
-    },
-    {
-      "parent": "93f941c0dce0e4cc",
-      "child": "8333f50be21295a9",
-      "type": "dependency-of"
-    },
-    {
-      "parent": "93f941c0dce0e4cc",
-      "child": "f0335edcb1f90c61",
       "type": "evident-by",
       "metadata": {
         "kind": "primary"
@@ -8739,134 +8861,12 @@
       "type": "contains"
     },
     {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "01aa01a57427541c",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "1299e8af6280a783",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "15dfcbb814f3f911",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "2102fe000c44b559",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "22d7eab5fc975368",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "450edff24758b56e",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "5bbd33fc8d83b1f9",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "5e1d59a7366bb284",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "753903c9d890b73b",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "76145d2aa8fc6935",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "8333f50be21295a9",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "8661f95150c1e2b6",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "881b00d33dee6363",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "8a794da1c89bf371",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "91cc93442a7f5542",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "93f941c0dce0e4cc",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "947b47aee5a2834d",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "aae57179ea2ecbdb",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "ac290b0ea5712c7f",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "b3dc9ac7252dcfc0",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "b922e2d1fc435019",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "d1ee23833e5fddca",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "d589392682c3c15f",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "df47a2b29e419453",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "ee66ae2759f53a0a",
-      "type": "contains"
-    },
-    {
-      "parent": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
-      "child": "f9d711457bcf3e1a",
-      "type": "contains"
+      "parent": "dac9d1678e3979db",
+      "child": "8289fa6e7f5a9377",
+      "type": "evident-by",
+      "metadata": {
+        "kind": "primary"
+      }
     },
     {
       "parent": "df47a2b29e419453",
@@ -8971,10 +8971,10 @@
   ],
   "files": [
     {
-      "id": "f0335edcb1f90c61",
+      "id": "8289fa6e7f5a9377",
       "location": {
         "path": "/app/cs-bouncer",
-        "layerID": "sha256:b2f680ccf02d44cd5402d33a390dba841e3f1c36640ba7785c033a1a6988ecbd"
+        "layerID": "sha256:693f064719456707e4e75dc5e86d46c1c5ddb0d59e57576f1532efb45712c117"
       },
       "metadata": {
         "mode": 755,
@@ -8982,16 +8982,16 @@
         "userID": 0,
         "groupID": 0,
         "mimeType": "application/x-executable",
-        "size": 8826836
+        "size": 8826884
       },
       "digests": [
         {
           "algorithm": "sha1",
-          "value": "3abc9fe9276ddc48304efdd0a77e4446f5ffd197"
+          "value": "17f37a1aba0622dc244d3fe8bdd778d25c33a7bd"
         },
         {
           "algorithm": "sha256",
-          "value": "44b26258684b4e38ed084508cbee90fb48d3e380ea394520794e7d31d85ea958"
+          "value": "22a120da585df35d057f1a4864082f3a2ada8f122621b8a1abca89f100fb6ba5"
         }
       ],
       "executable": {
@@ -20502,19 +20502,19 @@
     }
   ],
   "source": {
-    "id": "d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
+    "id": "6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
     "name": "ghcr.io/ercindedeoglu/cs-bouncer",
-    "version": "a4b0b7a",
+    "version": "bc50350",
     "type": "image",
     "metadata": {
-      "userInput": "ghcr.io/ercindedeoglu/cs-bouncer:a4b0b7a",
-      "imageID": "sha256:3ba8b29990acff3e2ff72c5ecec1ea760abc38be52ca9feffa2ba9666c9d20bf",
-      "manifestDigest": "sha256:d93670afa5839be182919c7b51b2db3e26929e3eb620013c7f73ee7ecbf3bd19",
+      "userInput": "ghcr.io/ercindedeoglu/cs-bouncer:bc50350",
+      "imageID": "sha256:34a536709efe0a5e37df73234102d20aed0df14385475ec85e10389b7bc0b872",
+      "manifestDigest": "sha256:6e4266616f966f97ba397f50ce99c489c33aa5ce9366d30acf94c9fd29f9d6e2",
       "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
       "tags": [
-        "ghcr.io/ercindedeoglu/cs-bouncer:a4b0b7a"
+        "ghcr.io/ercindedeoglu/cs-bouncer:bc50350"
       ],
-      "imageSize": 51477365,
+      "imageSize": 51477413,
       "layers": [
         {
           "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
@@ -20533,21 +20533,21 @@
         },
         {
           "mediaType": "application/vnd.docker.image.rootfs.diff.tar.gzip",
-          "digest": "sha256:b2f680ccf02d44cd5402d33a390dba841e3f1c36640ba7785c033a1a6988ecbd",
-          "size": 8826836
+          "digest": "sha256:693f064719456707e4e75dc5e86d46c1c5ddb0d59e57576f1532efb45712c117",
+          "size": 8826884
         }
       ],
-      "manifest": "eyJzY2hlbWFWZXJzaW9uIjoyLCJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmRpc3RyaWJ1dGlvbi5tYW5pZmVzdC52Mitqc29uIiwiY29uZmlnIjp7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuY29udGFpbmVyLmltYWdlLnYxK2pzb24iLCJzaXplIjoxNTY3LCJkaWdlc3QiOiJzaGEyNTY6M2JhOGIyOTk5MGFjZmYzZTJmZjcyYzVlY2VjMWVhNzYwYWJjMzhiZTUyY2E5ZmVmZmEyYmE5NjY2YzlkMjBiZiJ9LCJsYXllcnMiOlt7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLCJzaXplIjo4NTkzOTIwLCJkaWdlc3QiOiJzaGEyNTY6ZmQyNzU4ZDdhNTBlMmI3OGQyNzVlZTdkMWMyMTg0ODlmMjQzOTA4NDQ0OWQ4OTVmYTE3ZWVkZTZjNjFhYjJjNCJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjM0NzM2NjQwLCJkaWdlc3QiOiJzaGEyNTY6NThlNTA3ZWQ4ZGI2Y2FhYTAzZjIyZWI4YzZlODQwM2FlMjVmODI4Y2RiYjU2ZmRkZDAzODY1YjlhN2E4YzgyMSJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjE1MzYsImRpZ2VzdCI6InNoYTI1Njo4YjY2MDhmNzZiODhhMmUyM2VlODZiOTVhM2QwMjM1MTRjZDAxNjJhMjRiOGJiYjQ2ZmVhMDhlMTIzYWE2YmVmIn0seyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwic2l6ZSI6ODgyODkyOCwiZGlnZXN0Ijoic2hhMjU2OmIyZjY4MGNjZjAyZDQ0Y2Q1NDAyZDMzYTM5MGRiYTg0MWUzZjFjMzY2NDBiYTc3ODVjMDMzYTFhNjk4OGVjYmQifV19",
-      "config": "eyJhcmNoaXRlY3R1cmUiOiJhbWQ2NCIsImNvbmZpZyI6eyJFbnYiOlsiUEFUSD0vdXNyL2xvY2FsL3NiaW46L3Vzci9sb2NhbC9iaW46L3Vzci9zYmluOi91c3IvYmluOi9zYmluOi9iaW4iXSwiRW50cnlwb2ludCI6WyIvYXBwL2NzLWJvdW5jZXIiXSwiV29ya2luZ0RpciI6Ii9hcHAiLCJMYWJlbHMiOnsib3JnLm9wZW5jb250YWluZXJzLmltYWdlLnNvdXJjZSI6Imh0dHBzOi8vZ2l0aHViLmNvbS9FcmNpbkRlZGVvZ2x1L2NzLWJvdW5jZXIiLCJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UudGl0bGUiOiJjcy1ib3VuY2VyIiwib3JnLm9wZW5jb250YWluZXJzLmltYWdlLnZlcnNpb24iOiJ2MS4wLjExIn19LCJjcmVhdGVkIjoiMjAyNS0wNS0zMVQwMDoyMDozNS4yNjEzMzA1NDRaIiwiaGlzdG9yeSI6W3siY3JlYXRlZCI6IjIwMjUtMDUtMzBUMTY6MjA6NDFaIiwiY3JlYXRlZF9ieSI6IkFERCBhbHBpbmUtbWluaXJvb3Rmcy0zLjIyLjAteDg2XzY0LnRhci5neiAvICMgYnVpbGRraXQiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCJ9LHsiY3JlYXRlZCI6IjIwMjUtMDUtMzBUMTY6MjA6NDFaIiwiY3JlYXRlZF9ieSI6IkNNRCBbXCIvYmluL3NoXCJdIiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAiLCJlbXB0eV9sYXllciI6dHJ1ZX0seyJjcmVhdGVkIjoiMjAyNS0wNS0zMVQwMDoyMDoyOC45OTU3ODI0OTZaIiwiY3JlYXRlZF9ieSI6IlJVTiAvYmluL3NoIC1jIGFwayBhZGQgLS1uby1jYWNoZSBpcHRhYmxlcyBpcDZ0YWJsZXMgZG9ja2VyLWNsaSAjIGJ1aWxka2l0IiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAifSx7ImNyZWF0ZWQiOiIyMDI1LTA1LTMxVDAwOjIwOjI5LjA5MzI4NTYxN1oiLCJjcmVhdGVkX2J5IjoiV09SS0RJUiAvYXBwIiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAifSx7ImNyZWF0ZWQiOiIyMDI1LTA1LTMxVDAwOjIwOjM1LjI2MTMzMDU0NFoiLCJjcmVhdGVkX2J5IjoiQ09QWSAvYXBwL2NzLWJvdW5jZXIgLiAjIGJ1aWxka2l0IiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAifSx7ImNyZWF0ZWQiOiIyMDI1LTA1LTMxVDAwOjIwOjM1LjI2MTMzMDU0NFoiLCJjcmVhdGVkX2J5IjoiRU5UUllQT0lOVCBbXCIvYXBwL2NzLWJvdW5jZXJcIl0iLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCIsImVtcHR5X2xheWVyIjp0cnVlfV0sIm9zIjoibGludXgiLCJyb290ZnMiOnsidHlwZSI6ImxheWVycyIsImRpZmZfaWRzIjpbInNoYTI1NjpmZDI3NThkN2E1MGUyYjc4ZDI3NWVlN2QxYzIxODQ4OWYyNDM5MDg0NDQ5ZDg5NWZhMTdlZWRlNmM2MWFiMmM0Iiwic2hhMjU2OjU4ZTUwN2VkOGRiNmNhYWEwM2YyMmViOGM2ZTg0MDNhZTI1ZjgyOGNkYmI1NmZkZGQwMzg2NWI5YTdhOGM4MjEiLCJzaGEyNTY6OGI2NjA4Zjc2Yjg4YTJlMjNlZTg2Yjk1YTNkMDIzNTE0Y2QwMTYyYTI0YjhiYmI0NmZlYTA4ZTEyM2FhNmJlZiIsInNoYTI1NjpiMmY2ODBjY2YwMmQ0NGNkNTQwMmQzM2EzOTBkYmE4NDFlM2YxYzM2NjQwYmE3Nzg1YzAzM2ExYTY5ODhlY2JkIl19fQ==",
+      "manifest": "eyJzY2hlbWFWZXJzaW9uIjoyLCJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmRpc3RyaWJ1dGlvbi5tYW5pZmVzdC52Mitqc29uIiwiY29uZmlnIjp7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuY29udGFpbmVyLmltYWdlLnYxK2pzb24iLCJzaXplIjoxNTY3LCJkaWdlc3QiOiJzaGEyNTY6MzRhNTM2NzA5ZWZlMGE1ZTM3ZGY3MzIzNDEwMmQyMGFlZDBkZjE0Mzg1NDc1ZWM4NWUxMDM4OWI3YmMwYjg3MiJ9LCJsYXllcnMiOlt7Im1lZGlhVHlwZSI6ImFwcGxpY2F0aW9uL3ZuZC5kb2NrZXIuaW1hZ2Uucm9vdGZzLmRpZmYudGFyLmd6aXAiLCJzaXplIjo4NTkzOTIwLCJkaWdlc3QiOiJzaGEyNTY6ZmQyNzU4ZDdhNTBlMmI3OGQyNzVlZTdkMWMyMTg0ODlmMjQzOTA4NDQ0OWQ4OTVmYTE3ZWVkZTZjNjFhYjJjNCJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjM0NzM2NjQwLCJkaWdlc3QiOiJzaGEyNTY6NThlNTA3ZWQ4ZGI2Y2FhYTAzZjIyZWI4YzZlODQwM2FlMjVmODI4Y2RiYjU2ZmRkZDAzODY1YjlhN2E4YzgyMSJ9LHsibWVkaWFUeXBlIjoiYXBwbGljYXRpb24vdm5kLmRvY2tlci5pbWFnZS5yb290ZnMuZGlmZi50YXIuZ3ppcCIsInNpemUiOjE1MzYsImRpZ2VzdCI6InNoYTI1Njo4YjY2MDhmNzZiODhhMmUyM2VlODZiOTVhM2QwMjM1MTRjZDAxNjJhMjRiOGJiYjQ2ZmVhMDhlMTIzYWE2YmVmIn0seyJtZWRpYVR5cGUiOiJhcHBsaWNhdGlvbi92bmQuZG9ja2VyLmltYWdlLnJvb3Rmcy5kaWZmLnRhci5nemlwIiwic2l6ZSI6ODgyOTQ0MCwiZGlnZXN0Ijoic2hhMjU2OjY5M2YwNjQ3MTk0NTY3MDdlNGU3NWRjNWU4NmQ0NmMxYzVkZGIwZDU5ZTU3NTc2ZjE1MzJlZmI0NTcxMmMxMTcifV19",
+      "config": "eyJhcmNoaXRlY3R1cmUiOiJhbWQ2NCIsImNvbmZpZyI6eyJFbnYiOlsiUEFUSD0vdXNyL2xvY2FsL3NiaW46L3Vzci9sb2NhbC9iaW46L3Vzci9zYmluOi91c3IvYmluOi9zYmluOi9iaW4iXSwiRW50cnlwb2ludCI6WyIvYXBwL2NzLWJvdW5jZXIiXSwiV29ya2luZ0RpciI6Ii9hcHAiLCJMYWJlbHMiOnsib3JnLm9wZW5jb250YWluZXJzLmltYWdlLnNvdXJjZSI6Imh0dHBzOi8vZ2l0aHViLmNvbS9FcmNpbkRlZGVvZ2x1L2NzLWJvdW5jZXIiLCJvcmcub3BlbmNvbnRhaW5lcnMuaW1hZ2UudGl0bGUiOiJjcy1ib3VuY2VyIiwib3JnLm9wZW5jb250YWluZXJzLmltYWdlLnZlcnNpb24iOiJ2MS4wLjEyIn19LCJjcmVhdGVkIjoiMjAyNS0wNi0wNlQwMDoyMTo0OC4wMTM3NDIzNDdaIiwiaGlzdG9yeSI6W3siY3JlYXRlZCI6IjIwMjUtMDUtMzBUMTY6MjA6NDFaIiwiY3JlYXRlZF9ieSI6IkFERCBhbHBpbmUtbWluaXJvb3Rmcy0zLjIyLjAteDg2XzY0LnRhci5neiAvICMgYnVpbGRraXQiLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCJ9LHsiY3JlYXRlZCI6IjIwMjUtMDUtMzBUMTY6MjA6NDFaIiwiY3JlYXRlZF9ieSI6IkNNRCBbXCIvYmluL3NoXCJdIiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAiLCJlbXB0eV9sYXllciI6dHJ1ZX0seyJjcmVhdGVkIjoiMjAyNS0wNS0zMVQwMDoyMDoyOC45OTU3ODI0OTZaIiwiY3JlYXRlZF9ieSI6IlJVTiAvYmluL3NoIC1jIGFwayBhZGQgLS1uby1jYWNoZSBpcHRhYmxlcyBpcDZ0YWJsZXMgZG9ja2VyLWNsaSAjIGJ1aWxka2l0IiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAifSx7ImNyZWF0ZWQiOiIyMDI1LTA1LTMxVDAwOjIwOjI5LjA5MzI4NTYxN1oiLCJjcmVhdGVkX2J5IjoiV09SS0RJUiAvYXBwIiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAifSx7ImNyZWF0ZWQiOiIyMDI1LTA2LTA2VDAwOjIxOjQ4LjAxMzc0MjM0N1oiLCJjcmVhdGVkX2J5IjoiQ09QWSAvYXBwL2NzLWJvdW5jZXIgLiAjIGJ1aWxka2l0IiwiY29tbWVudCI6ImJ1aWxka2l0LmRvY2tlcmZpbGUudjAifSx7ImNyZWF0ZWQiOiIyMDI1LTA2LTA2VDAwOjIxOjQ4LjAxMzc0MjM0N1oiLCJjcmVhdGVkX2J5IjoiRU5UUllQT0lOVCBbXCIvYXBwL2NzLWJvdW5jZXJcIl0iLCJjb21tZW50IjoiYnVpbGRraXQuZG9ja2VyZmlsZS52MCIsImVtcHR5X2xheWVyIjp0cnVlfV0sIm9zIjoibGludXgiLCJyb290ZnMiOnsidHlwZSI6ImxheWVycyIsImRpZmZfaWRzIjpbInNoYTI1NjpmZDI3NThkN2E1MGUyYjc4ZDI3NWVlN2QxYzIxODQ4OWYyNDM5MDg0NDQ5ZDg5NWZhMTdlZWRlNmM2MWFiMmM0Iiwic2hhMjU2OjU4ZTUwN2VkOGRiNmNhYWEwM2YyMmViOGM2ZTg0MDNhZTI1ZjgyOGNkYmI1NmZkZGQwMzg2NWI5YTdhOGM4MjEiLCJzaGEyNTY6OGI2NjA4Zjc2Yjg4YTJlMjNlZTg2Yjk1YTNkMDIzNTE0Y2QwMTYyYTI0YjhiYmI0NmZlYTA4ZTEyM2FhNmJlZiIsInNoYTI1Njo2OTNmMDY0NzE5NDU2NzA3ZTRlNzVkYzVlODZkNDZjMWM1ZGRiMGQ1OWU1NzU3NmYxNTMyZWZiNDU3MTJjMTE3Il19fQ==",
       "repoDigests": [
-        "ghcr.io/ercindedeoglu/cs-bouncer@sha256:0215837ac03eb8b7c8f7cebfcbe0c71d52fce90c8d91dbbe50851d94de7ba807"
+        "ghcr.io/ercindedeoglu/cs-bouncer@sha256:cf128304d52eb1195f7b2e316dbf720b0fbc7c0c4141d28278382b282ec31731"
       ],
       "architecture": "amd64",
       "os": "linux",
       "labels": {
         "org.opencontainers.image.source": "https://github.com/ErcinDedeoglu/cs-bouncer",
         "org.opencontainers.image.title": "cs-bouncer",
-        "org.opencontainers.image.version": "v1.0.11"
+        "org.opencontainers.image.version": "v1.0.12"
       }
     }
   },
